@@ -22,7 +22,7 @@ public class PartTimersManagerServiceImpl implements PartTimersManagerService {
 	public Map<String, Object> findPartTimersSearch(Map<String, Object> map, EasyUiPager easyUiPager, Object o) {
 		User u = (User) o;
 		if (u != null) {
-			map.put("uid", u.getUid());
+			map.put("uid", u.getId());
 			return userDao.findUserSearch(map, easyUiPager);
 		}
 		return null;
