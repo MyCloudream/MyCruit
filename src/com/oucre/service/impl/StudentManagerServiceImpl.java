@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.oucre.core.mode.json.AjaxJson;
 import com.oucre.core.mode.search.EasyUiPager;
+import com.oucre.core.util.PublicContent;
 import com.oucre.core.util.ValidateUtil;
 import com.oucre.dao.StudentDao;
 import com.oucre.pojo.Student;
@@ -43,6 +44,10 @@ public class StudentManagerServiceImpl implements StudentManagerService{
 		AjaxJson a = new AjaxJson();
 		if(user!=null){
 			student.setUid(user.getId());
+			if(PublicContent.CONVER_BY_MYSELF.equals(student.getConver())){
+				student.setDays(PublicContent.CONVER_DAYS);
+			}
+			student.setStatus(PublicContent.STATUS_DEFAULT_VALUE);
 			if (studentDao.add(student) > 0) {
 				a.setSuccess(true);
 				a.setMsg("操作成功");
@@ -61,12 +66,12 @@ public class StudentManagerServiceImpl implements StudentManagerService{
 				a.setSuccess(true);
 				a.setMsg("操作成功");
 			} else {
-				a.setSuccess(true);
-				a.setMsg("操作成功");
+				a.setSuccess(false);
+				a.setMsg("操作失败");
 			}
 		} else {
-			a.setSuccess(true);
-			a.setMsg("操作成功");
+			a.setSuccess(false);
+			a.setMsg("操作失败");
 		}
 		return a;
 	}

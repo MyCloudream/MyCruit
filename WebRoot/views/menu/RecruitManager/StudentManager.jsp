@@ -39,32 +39,70 @@
 				columns : [ [ {
 					field : 'name',
 					title : '姓名',
-					width : 300,
+					width : 140,
 					sortable : true
 				}, {
 					field : 'qq',
 					title : 'QQ号码',
-					width : 300,
+					width : 150,
 					sortable : true
 				}, {
 					field : 'mobile',
 					title : '手机号码',
-					width : 300,
+					width : 150,
 					sortable : true
-				}, {
+				},{
+					field : 'uid',
+					title : '介绍人',
+					width : 140,
+					sortable : true
+				},{
+					field : 'cuid',
+					title : '转化人',
+					width : 140,
+					sortable : true,
+					formatter:function(value, row, index){
+						if(value==null){
+							return "--";
+						}else{
+							return value;
+						}
+					}
+				},{
+					field : 'conver',
+					title : '是否可以转化',
+					width : 100,
+					sortable : true,
+					formatter:function(value, row, index){
+						if(value=="1"){
+							return "不可以";
+						}else{
+							return "可以";
+						}
+					}
+				},{
+					field : 'days',
+					title : '转化倒计时',
+					width : 70,
+					sortable : true
+				},{
 					field : 'status',
 					title : '状态',
-					width : 300,
+					width : 200,
 					sortable : true,
 					formatter : function(value, row, index) {
 						if (value == "1") {
-							return "考虑中";
+							return "录入状态，审核中";
 						} else if (value == "2"){
-							return "已入学";
+							return "录入审核通过";
 						} else if(value == "3"){
-							return "已放弃";
-						} else{
-							return "未知状态";
+							return "已转化，审核中";
+						} else if(value == "4"){
+							return "转化审核通过";
+						} else if(value == "0"){
+							return "转化失败";
+						}else{
+							return "其他状态";
 						}
 					}
 				} ] ],

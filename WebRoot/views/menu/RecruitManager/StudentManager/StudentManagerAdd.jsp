@@ -38,13 +38,24 @@
 					errormsg="请输入正确的电话号码" nullmsg="请填写信息！"><span
 					class="Validform_checktip">电话号码，例如18601942391</span></td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<th><span class="t_t">*</span>学生状态:</th>
 				<td><select name="status">
 						<option value="1">考虑中</option>
 						<option value="2">已入学</option>
 						<option value="3">已放弃</option>
 				</select> <span class="Validform_checktip">选择当前的学生状态（考虑中，已入学，已放弃，默认考虑中）</span></td>
+			</tr> -->
+<!-- 			<tr>
+				<th><span class="t_t">*</span>学生状态:</th>
+				<td>考虑中</td>
+			</tr> -->
+			<tr>
+				<th><span class="t_t">*</span>转化设置:</th>
+				<td><select name="conver">
+						<option value="1">我自己转化</option>
+						<option value="0">任意人可转化</option>
+				</select> <span class="Validform_checktip">选择"我可以转化",则有30天的转化时间。</span></td>
 			</tr>
 		</table>
 		<span class="thidden"><input type="button" id="btn_sub"></span>
