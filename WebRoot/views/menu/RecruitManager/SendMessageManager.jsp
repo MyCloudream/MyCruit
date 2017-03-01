@@ -22,8 +22,21 @@
 	<table id="tt">
 	</table>
 	<script type="text/javascript">
+		var users;
+		function getAllUsers() {
+			$.ajax({
+				type : "POST",
+				async : false,
+				url : "/busi/common/findAllUsers.do",
+				dataType : "json",
+				success : function(json) {
+					users = json;
+				}
+			});
+		}
 		var datagrid;
 		$(function() {
+			getAllUsers();
 			datagrid = $("#tt").datagrid({
 				url : '<%=path%>/busi/SendMessageManager.do',
 				/* 	fitColumns : true,//设置为true将自动使列适应表格宽度以防止出现水平滚动 */
@@ -49,13 +62,29 @@
 				}, {
 					field : 'message',
 					title : '消息',
-					width : 700,
+					width : 450,
 					sortable : true
 				},{
 					field : 'mtime',
 					title : '时间',
+					width : 200,
+					sortable : true,
+					formatter : function(value, row, index) {
+						return getLocalTime(value);
+					}
+				},{
+					field : 'uid',
+					title : '发布人',
 					width : 100,
-					sortable : true
+					sortable : true,
+					formatter : function(value, row, index) {
+						for (var i = 0; i < users.length; i++) {
+							if (users[i].id == value) {
+								return users[i].username;
+							}
+						}
+						return "未知";
+					}
 				} ] ],
 				toolbar : ".p",
 				onRowContextMenu : function(e, rowIndex, rowData) { // 右击事件
@@ -67,6 +96,19 @@
 				}
 			});
 		});
+		
+		function getLocalTime(x) {
+			var now = new Date(x);
+			var year = now.getYear() + 1900;
+			var month = now.getMonth() + 1;
+			var date = now.getDate();
+			var hour = now.getHours();
+			var minute = now.getMinutes();
+			var second = now.getSeconds();
+			return year + "-" + month + "-" + date + " " + hour + ":" + minute
+					+ ":" + second;
+		}
+		
 		function btn() {
 			datagrid.datagrid("load", {
 				gnum : ff.find('[name="gnum"]').val(),

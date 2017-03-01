@@ -157,4 +157,9 @@ public class BusiCommonServiceImpl implements BusiCommonService {
 		}
 		return a;
 	}
+
+	@Override
+	public List<User> findAllUsers() {
+		return userDao.findAllUsers();
+	}
 }

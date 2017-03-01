@@ -21,4 +21,6 @@ public interface UserDao extends BaseDao<User> {
 	public boolean findExistTel(String tel);
 
 	public List<User> findEnterpriseUser(Integer eid);
+	
+	public List<User> findAllUsers();
 }

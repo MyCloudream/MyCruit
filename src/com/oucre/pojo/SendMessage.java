@@ -3,6 +3,7 @@ package com.oucre.pojo;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,8 +18,8 @@ public class SendMessage implements Serializable {
 	private String gnum;
 	private String gname;
 	private String message;
-	private String mtime;
-
+	private Timestamp mtime;
+	private Integer uid;
 	public SendMessage() {
 
 	}
@@ -27,12 +28,13 @@ public class SendMessage implements Serializable {
 		this.id = id;
 	}
 
-	public SendMessage(Integer id, String gnum, String gname, String message, String mtime) {
+	public SendMessage(Integer id, String gnum, String gname, String message, Timestamp mtime,Integer uid) {
 		this.id = id;
 		this.gnum = gnum;
 		this.gname = gname;
 		this.message = message;
 		this.mtime = mtime;
+		this.uid = uid;
 	}
 
 	@Id
@@ -73,13 +75,22 @@ public class SendMessage implements Serializable {
 		this.message = message;
 	}
 
-	@Column(name = "mtime", length = 20)
-	public String getMtime() {
+	@Column(name = "mtime")
+	public Timestamp getMtime() {
 		return mtime;
 	}
 
-	public void setMtime(String mtime) {
+	public void setMtime(Timestamp mtime) {
 		this.mtime = mtime;
+	}
+
+	@Column(name = "uid")
+	public Integer getUid() {
+		return uid;
+	}
+
+	public void setUid(Integer uid) {
+		this.uid = uid;
 	}
 
 }

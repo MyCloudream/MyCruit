@@ -6,6 +6,7 @@ import com.oucre.core.mode.json.AjaxJson;
 import com.oucre.core.mode.module.ModelInfo;
 import com.oucre.pojo.Resource;
 import com.oucre.pojo.Role;
+import com.oucre.pojo.User;
 
 public interface BusiCommonService {
 
@@ -31,4 +32,6 @@ public interface BusiCommonService {
 	public AjaxJson updUserPassword(String passworda, String paswrod, Object obj);
 
 	public AjaxJson updUser(String username, Object obj);
+
+	public List<User> findAllUsers();
 }

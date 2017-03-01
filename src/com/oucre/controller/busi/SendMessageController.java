@@ -17,6 +17,7 @@ import com.oucre.core.mode.json.AjaxJson;
 import com.oucre.core.mode.search.EasyUiPager;
 import com.oucre.core.util.ValidateUtil;
 import com.oucre.pojo.SendMessage;
+import com.oucre.pojo.Student;
 import com.oucre.pojo.User;
 import com.oucre.service.SendMessageService;
 
@@ -44,8 +45,15 @@ public class SendMessageController {
 	
 	@RequestMapping(value = "/SendMessageManagerAdd.do")
 	public @ResponseBody
-	AjaxJson addSendMessageManager(@ModelAttribute SendMessage entity) {
-		return sendMessageService.addSendMessage(entity);
+	AjaxJson addSendMessageManager(@ModelAttribute SendMessage entity,HttpSession session) {
+		return sendMessageService.addSendMessage(entity,(User)session.getAttribute("user_info"));
+	}
+	
+	@RequestMapping(value = "/SendMessageManagerUpd.do")
+	public @ResponseBody
+	AjaxJson updStudent(@ModelAttribute SendMessage entity,HttpSession session) {
+		System.out.println("----------------"+entity+"-----------------");
+		return sendMessageService.updSendMessage(entity,(User)session.getAttribute("user_info"));
 	}
 	
 	@RequestMapping(value = "/SendMessageManagerDel.do")

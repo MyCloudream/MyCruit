@@ -156,4 +156,14 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 	 * logger.error("dao³ö´í", e); return null; } }
 	 */
 
+	@Override
+	public List<User> findAllUsers() {
+		try {
+			return super.findHql("from User");
+		} catch (Exception e) {
+			logger.error("dao´íÎó", e);
+			return null;
+		}
+	}
+
 }

@@ -21,9 +21,22 @@
 	<table id="tt">
 	</table>
 	<script type="text/javascript">
+		var users;
+		function getAllUsers() {
+			$.ajax({
+				type : "POST",
+				async : false,
+				url : "/busi/common/findAllUsers.do",
+				dataType : "json",
+				success : function(json) {
+					users = json;
+				}
+			});
+		}
 		var vtype = [ "是", "否" ];
 		var datagrid;
 		$(function() {
+			getAllUsers();
 			datagrid = $("#tt").datagrid({
 				url : '/busi/StudentManager.do',
 				/* 	fitColumns : true,//设置为true将自动使列适应表格宽度以防止出现水平滚动 */
@@ -51,41 +64,50 @@
 					title : '手机号码',
 					width : 150,
 					sortable : true
-				},{
+				}, {
 					field : 'uid',
 					title : '介绍人',
 					width : 140,
-					sortable : true
-				},{
+					sortable : true,
+					formatter : function(value, row, index) {
+						for (var i = 0; i < users.length; i++) {
+							if (users[i].id == value) {
+								return users[i].username;
+							}
+						}
+						return "--";
+					}
+				}, {
 					field : 'cuid',
 					title : '转化人',
 					width : 140,
 					sortable : true,
-					formatter:function(value, row, index){
-						if(value==null){
-							return "--";
-						}else{
-							return value;
+					formatter : function(value, row, index) {
+						for (var i = 0; i < users.length; i++) {
+							if (users[i].id == value) {
+								return users[i].username;
+							}
 						}
+						return "--";
 					}
-				},{
+				}, {
 					field : 'conver',
 					title : '是否可以转化',
 					width : 100,
 					sortable : true,
-					formatter:function(value, row, index){
-						if(value=="1"){
+					formatter : function(value, row, index) {
+						if (value == "1") {
 							return "不可以";
-						}else{
+						} else {
 							return "可以";
 						}
 					}
-				},{
+				}, {
 					field : 'days',
 					title : '转化倒计时',
 					width : 70,
 					sortable : true
-				},{
+				}, {
 					field : 'status',
 					title : '状态',
 					width : 200,
@@ -93,15 +115,15 @@
 					formatter : function(value, row, index) {
 						if (value == "1") {
 							return "录入状态，审核中";
-						} else if (value == "2"){
+						} else if (value == "2") {
 							return "录入审核通过";
-						} else if(value == "3"){
+						} else if (value == "3") {
 							return "已转化，审核中";
-						} else if(value == "4"){
+						} else if (value == "4") {
 							return "转化审核通过";
-						} else if(value == "0"){
+						} else if (value == "0") {
 							return "转化失败";
-						}else{
+						} else {
 							return "其他状态";
 						}
 					}
@@ -127,12 +149,12 @@
 			btn();
 		}
 		function StudentManagerUpd() {
-			updateobj(gb("StudentManagerUpd").name, gb("StudentManagerUpd").link,
-					"", "");
+			updateobj(gb("StudentManagerUpd").name,
+					gb("StudentManagerUpd").link, "", "");
 		}
 		function StudentManagerAdd() {
-			addobj(gb("StudentManagerAdd").name, gb("StudentManagerAdd").link, "",
-					"");
+			addobj(gb("StudentManagerAdd").name, gb("StudentManagerAdd").link,
+					"", "");
 		}
 		function StudentManagerDel() {
 			delobj("/busi/StudentManagerDel.do");

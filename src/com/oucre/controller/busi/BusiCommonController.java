@@ -93,4 +93,10 @@ public class BusiCommonController {
 	List<Role> findAllRoleGroups(@RequestParam(value = "groups") String groups) {
 		return commonService.findAllRoleGroups(groups);
 	}
+	
+	@RequestMapping(value = "/findAllUsers.do")
+	public @ResponseBody
+	List<User> findAllUsers() {
+		return commonService.findAllUsers();
+	}
 }
