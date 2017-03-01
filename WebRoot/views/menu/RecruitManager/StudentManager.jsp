@@ -9,7 +9,8 @@
 	<div class="p">
 		<form id="ff" method="post">
 			<p>
-				<span class="spanr">手机号码:<input type="text" name="mobile">&nbsp;&nbsp;
+				<span class="spanr">QQ号码:<input type="text" name="qq">&nbsp;&nbsp;
+					手机号码:<input type="text" name="mobile">&nbsp;&nbsp;
 					名称:<input type="text" name="name">&nbsp;&nbsp;<a id="btn"
 					onclick="btn()" class="easyui-linkbutton"
 					data-options="iconCls:'icon-search'">查询</a>&nbsp;&nbsp;<a id="btn"
@@ -118,12 +119,16 @@
 						} else if (value == "2") {
 							return "录入审核通过";
 						} else if (value == "3") {
-							return "已转化，审核中";
+							return "审核不通过";
 						} else if (value == "4") {
+							return "转化审核中";
+						} else if (value == "5") {
 							return "转化审核通过";
-						} else if (value == "0") {
+						} else if(value == "6"){
+							return "转化审核失败";
+						} else if(value == "7"){
 							return "转化失败";
-						} else {
+						}else {
 							return "其他状态";
 						}
 					}
@@ -141,7 +146,8 @@
 		function btn() {
 			datagrid.datagrid("load", {
 				name : ff.find('[name="name"]').val(),
-				mobile : ff.find('[name="mobile"]').val()
+				mobile : ff.find('[name="mobile"]').val(),
+				qq : ff.find('[name="qq"]').val()
 			});
 		}
 		function reload() {
@@ -151,6 +157,10 @@
 		function StudentManagerUpd() {
 			updateobj(gb("StudentManagerUpd").name,
 					gb("StudentManagerUpd").link, "", "");
+		}
+		function StudentManagerUpdStatus() {
+			updateobj(gb("StudentManagerUpdStatus").name,
+					gb("StudentManagerUpdStatus").link, "", "");
 		}
 		function StudentManagerAdd() {
 			addobj(gb("StudentManagerAdd").name, gb("StudentManagerAdd").link,

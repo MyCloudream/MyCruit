@@ -7,6 +7,6 @@ public interface PublicContent {
 	String CONVER_BY_ANYONE = "0";
 	/** 转化剩余日期 **/
 	int CONVER_DAYS = 30;
-	/** 学生录入默认状态 **/
+	/** 学生录入默认状态，提交申请 **/
 	String STATUS_DEFAULT_VALUE = "1";
 }

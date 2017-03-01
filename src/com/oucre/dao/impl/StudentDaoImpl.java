@@ -68,14 +68,17 @@ public class StudentDaoImpl extends BaseDao<Student> implements StudentDao {
 	public Map<String, Object> findStudentSearch(Map<String, Object> map, EasyUiPager easyUiPager) {
 		try {
 			String Hql = "from Student where 1=1 ";
-			if (map.get("uid") != null) {
+			/*if (map.get("uid") != null) {
 				Hql += "and uid = " + map.get("uid") + " ";
-			}
+			}*/
 			if (map.get("name") != null) {
 				Hql += "and name like '" + map.get("name") + "%' ";
 			}
 			if (map.get("mobile") != null) {
 				Hql += "and mobile like '" + map.get("mobile") + "%' ";
+			}
+			if (map.get("qq") != null) {
+				Hql += "and qq like '" + map.get("qq") + "%' ";
 			}
 			String orderby = "";
 			if (easyUiPager.getOrderby() != null) {

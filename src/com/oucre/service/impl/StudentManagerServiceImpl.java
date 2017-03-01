@@ -23,7 +23,7 @@ public class StudentManagerServiceImpl implements StudentManagerService{
 	@Override
 	public Map<String, Object> findStudentSearch(Map<String, Object> map, EasyUiPager easyUiPager,User user) {
 		if(user!=null){
-			map.put("uid", user.getId());
+//			map.put("uid", user.getId());
 			return studentDao.findStudentSearch(map, easyUiPager);
 		}
 		return null;

@@ -31,12 +31,16 @@ public class StudentManagerController {
 	Map<String, Object> findStudentSearch(@ModelAttribute EasyUiPager easyUiPager, HttpServletRequest req) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		String name = req.getParameter("name");
-		String code = req.getParameter("mobile");
+		String mobile = req.getParameter("mobile");
+		String qq = req.getParameter("qq");
 		if (ValidateUtil.neNull(name)) {
 			map.put("name", name);
 		}
-		if (ValidateUtil.neNull(code)) {
-			map.put("mobile", code);
+		if (ValidateUtil.neNull(mobile)) {
+			map.put("mobile", mobile);
+		}
+		if (ValidateUtil.neNull(qq)) {
+			map.put("qq", qq);
 		}
 		return studentService.findStudentSearch(map, easyUiPager,(User)req.getSession().getAttribute("user_info"));
 	}
@@ -44,7 +48,12 @@ public class StudentManagerController {
 	@RequestMapping(value = "/StudentManagerUpd.do")
 	public @ResponseBody
 	AjaxJson updStudent(@ModelAttribute Student Student,HttpSession session) {
-		System.out.println("----------------"+Student+"-----------------");
+		return studentService.updStudent(Student,(User)session.getAttribute("user_info"));
+	}
+	
+	@RequestMapping(value = "/StudentManagerUpdStatus.do")
+	public @ResponseBody
+	AjaxJson updStudentStatus(@ModelAttribute Student Student,HttpSession session) {
 		return studentService.updStudent(Student,(User)session.getAttribute("user_info"));
 	}
 
