@@ -38,6 +38,17 @@ public class StudentManagerServiceImpl implements StudentManagerService{
 		}
 		return a;
 	}
+	
+	@Override
+	public AjaxJson updStudentConver(Student student,User user) {
+		AjaxJson a = new AjaxJson();
+		student.setCuid(user.getId());
+		if (studentDao.upd(student)) {
+			a.setSuccess(true);
+			a.setMsg("²Ù×÷³É¹¦");
+		}
+		return a;
+	}
 
 	@Override
 	public AjaxJson addStudent(Student student,User user) {

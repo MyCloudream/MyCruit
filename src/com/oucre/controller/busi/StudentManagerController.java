@@ -45,10 +45,10 @@ public class StudentManagerController {
 		return studentService.findStudentSearch(map, easyUiPager,(User)req.getSession().getAttribute("user_info"));
 	}
 
-	@RequestMapping(value = "/StudentManagerUpd.do")
+	@RequestMapping(value = "/StudentManagerUpdConver.do")
 	public @ResponseBody
 	AjaxJson updStudent(@ModelAttribute Student Student,HttpSession session) {
-		return studentService.updStudent(Student,(User)session.getAttribute("user_info"));
+		return studentService.updStudentConver(Student,(User)session.getAttribute("user_info"));
 	}
 	
 	@RequestMapping(value = "/StudentManagerUpdStatus.do")

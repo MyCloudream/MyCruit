@@ -16,4 +16,6 @@ public interface StudentManagerService {
 	AjaxJson addStudent(Student student, User user);
 
 	AjaxJson delStudent(Integer id, User user);
+
+	AjaxJson updStudentConver(Student student, User attribute);
 }
