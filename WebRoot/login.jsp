@@ -13,8 +13,8 @@
 /*    var ff; */
 	$(function() {
 /* 		ff = $("#ff").form(); */
-		$("#ff #name").val("18601942391");
-		$("#ff #password").val("123456");
+		$("#ff #name").val("");
+		$("#ff #password").val("");
 		$('#submit').bind('click', function() {
 			var name = $("#ff #name").val();
 			var password = $("#ff #password").val();

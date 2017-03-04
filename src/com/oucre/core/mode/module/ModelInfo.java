@@ -5,9 +5,6 @@ import java.util.List;
 import com.oucre.pojo.Resource;
 
 public class ModelInfo implements java.io.Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Integer id; // 一级菜单id
 	private String name; // 菜单名称

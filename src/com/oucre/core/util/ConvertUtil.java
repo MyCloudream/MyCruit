@@ -1,9 +1,3 @@
-/**
- * 文 件 名：ConvertString.java
- * 作    者: $Author: maoxiang $
- * 当前版本：$Revision: 1.2 $
- * 最后修改：$Author: maoxiang $
- */
 package com.oucre.core.util;
 
 import java.io.ByteArrayOutputStream;

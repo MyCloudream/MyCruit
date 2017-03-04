@@ -4,7 +4,6 @@ import java.util.List;
 
 /**
  * 分页实体类
- *
  */
 public class Pager {
 	private int currentPage;	//当前页号

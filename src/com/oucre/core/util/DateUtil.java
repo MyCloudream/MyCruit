@@ -67,7 +67,6 @@ public class DateUtil {
 	 * 获得 开始 结束时间
 	 * 
 	 * @date 2015-1-31 下午4:13:17
-	 * @author haoli_jun
 	 * @param year
 	 *            年份
 	 * @param season

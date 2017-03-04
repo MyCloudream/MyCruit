@@ -1,11 +1,6 @@
 package com.oucre.core.mode.json;
 
 
-/**
- * 
- * @author haoli
- * 
- */
 public class AjaxJson {
 
 	private boolean success = false;// ÊÇ·ñ³É¹¦

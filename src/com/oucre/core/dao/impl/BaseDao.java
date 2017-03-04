@@ -16,8 +16,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * 对dao的数据连接base类
  * 
  * @date 2015年5月25日 下午2:03:53
- * @author haoli_jun
- * @param <T>
  */
 @SuppressWarnings("unchecked")
 public class BaseDao<T> {

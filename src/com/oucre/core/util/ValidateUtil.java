@@ -19,7 +19,6 @@ public class ValidateUtil {
 	 * 不等于空
 	 * 
 	 * @date 2015-1-16 上午10:25:44
-	 * @author haoli_jun
 	 * @param str
 	 * @return
 	 */

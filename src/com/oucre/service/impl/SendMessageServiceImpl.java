@@ -39,15 +39,20 @@ public class SendMessageServiceImpl implements SendMessageService {
 	}
 
 	@Override
-	public AjaxJson delSendMessage(Integer id, User attribute) {
+	public AjaxJson delSendMessage(Integer id, User user) {
 		AjaxJson a = new AjaxJson();
 		if (ValidateUtil.isInt(id+"")) {
-			if (sendMessageDao.del(id)) {
-				a.setSuccess(true);
-				a.setMsg("操作成功");
-			} else {
+			if(sendMessageDao.findById(id).getUid()==user.getId()){
+				if (sendMessageDao.del(id)) {
+					a.setSuccess(true);
+					a.setMsg("操作成功");
+				} else {
+					a.setSuccess(false);
+					a.setMsg("操作失败");
+				}
+			}else{
 				a.setSuccess(false);
-				a.setMsg("操作失败");
+				a.setMsg("只能删除自己录入的条目");
 			}
 		} else {
 			a.setSuccess(false);

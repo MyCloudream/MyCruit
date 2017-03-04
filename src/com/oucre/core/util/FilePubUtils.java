@@ -177,8 +177,6 @@ public class FilePubUtils {
 
 	/**
 	 * 
-	 * @date 2015-3-3 обнГ5:09:57
-	 * @author haoli_jun
 	 * @param files
 	 * @param path
 	 */

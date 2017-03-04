@@ -89,7 +89,6 @@
 					width : 140,
 					sortable : true,
 					formatter : function(value, row, index) {
-						alert(value);
 						for (var i = 0; i < users.length; i++) {
 							if (users[i].id == value) {
 								return users[i].username;

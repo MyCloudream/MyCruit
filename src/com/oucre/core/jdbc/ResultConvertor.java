@@ -4,10 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * <p>
  * 映射jdbc返回的数据类型到自定义类型的转换器
- * @since 2015年1月9日
- * @author xiaofeng_zhang
  */
 public interface ResultConvertor {
 

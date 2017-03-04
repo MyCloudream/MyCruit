@@ -16,9 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 文件 公共方法 包含文件的上传、下载等操作
- * 
- * @author xiaofeng_zhang
- * @modify xiaofeng_zhang 2015年1月4日14:17:33 修改文件下载时弹出框文件名中文显示下划线的问题
  */
 public class FilePubUtils {
 	/**

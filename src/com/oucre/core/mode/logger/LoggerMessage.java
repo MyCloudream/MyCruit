@@ -1,11 +1,5 @@
 package com.oucre.core.mode.logger;
 
-/**
- * 错误类
- * 
- * @author haoli
- * 
- */
 public class LoggerMessage {
 	private String code;// 错误代码
 	private String message; // 错误消息

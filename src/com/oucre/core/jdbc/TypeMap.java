@@ -10,8 +10,6 @@ import java.util.Map;
  * 持有jdbc数据到自定义类型的转换配置信息
  * <p>
  * 内置了基本类型转换器
- * @since 2015年1月9日
- * @author xiaofeng_zhang
  */
 public class TypeMap {
 	
