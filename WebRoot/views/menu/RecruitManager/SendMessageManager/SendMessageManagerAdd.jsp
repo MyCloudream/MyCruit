@@ -32,7 +32,7 @@
 			</tr>
 			<tr>
 				<th><span class="t_t">*</span>发送消息内容:</th>
-				<td><textarea name="message" datatype="s5-499"  cols="70" rows="15"></textarea>
+				<td><textarea name="message" datatype="*2-499"  cols="70" rows="15"></textarea>
 				<br/><span class="Validform_checktip">发送的内容</span></td>
 			</tr>
 		</table>

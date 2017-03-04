@@ -23,6 +23,8 @@
 		valform("qq", formdata[0].qq, "");
 		valform("mobile", formdata[0].mobile, "");
 		valform("uid", formdata[0].uid, "");
+		valform("conver", formdata[0].conver, "");
+		valform("days", formdata[0].days, "");
 		valform("status", formdata[0].status, "select");
 	});
 </script>
@@ -61,6 +63,8 @@
 		<span class="thidden">
 			<input type="hidden" name="id" type="text">
 			<input type="hidden" name="uid" type="text">
+			<input type="hidden" name="conver" type="text">
+			<input type="hidden" name="days" type="text">
 			<input type="button" id="btn_sub">
 		</span>
 	</form>
