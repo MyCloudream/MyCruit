@@ -24,7 +24,11 @@
 	<!-- 年（可选） 留空, 1970-2099 , - * / -->
 
 	<!-- 要调用的工作类 -->
-	<bean id="quartzJob" class="com.oucre.quartz.MyQuartz"></bean>
+	<bean id="quartzJob" class="com.oucre.quartz.MyQuartz">
+		<!-- <property name="StudentDao">
+            <ref bean="StudentDaoImpl"/>
+        </property> -->
+	</bean>
 	<!-- 定义调用对象和调用对象的方法 -->
 	<bean id="jobtask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<!-- 调用的类 -->
@@ -44,7 +48,9 @@
 		</property>
 		<!-- cron表达式 -->
 		<property name="cronExpression">
-			<value>10/5 * * * * ?</value>
+			<!-- 每天凌晨一点执行 -->
+			<value>0 0 1 * * ?</value>
+			<!-- <value>10/5 * * * * ?</value> -->
 		</property>
 	</bean>
 	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序 -->
