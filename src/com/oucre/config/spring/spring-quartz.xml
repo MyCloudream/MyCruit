@@ -22,12 +22,9 @@
 	<!-- 月份 1-12 或者 JAN-DEC , - * / -->
 	<!-- 星期 1-7 或者 SUN-SAT , - * ? / L C # -->
 	<!-- 年（可选） 留空, 1970-2099 , - * / -->
-
+	<bean id="jobFactory" class="com.oucre.quartz.MyJobFactory"></bean>
 	<!-- 要调用的工作类 -->
 	<bean id="quartzJob" class="com.oucre.quartz.MyQuartz">
-		<!-- <property name="StudentDao">
-            <ref bean="StudentDaoImpl"/>
-        </property> -->
 	</bean>
 	<!-- 定义调用对象和调用对象的方法 -->
 	<bean id="jobtask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">

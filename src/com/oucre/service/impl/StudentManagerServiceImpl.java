@@ -1,5 +1,6 @@
 package com.oucre.service.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,6 +86,11 @@ public class StudentManagerServiceImpl implements StudentManagerService{
 			a.setMsg("²Ù×÷Ê§°Ü");
 		}
 		return a;
+	}
+
+	@Override
+	public List<Student> findAllStudents() {
+		return studentDao.findAllStudents();
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.oucre.service;
 
+import java.util.List;
 import java.util.Map;
 
 import com.oucre.core.mode.json.AjaxJson;
@@ -18,4 +19,6 @@ public interface StudentManagerService {
 	AjaxJson delStudent(Integer id, User user);
 
 	AjaxJson updStudentConver(Student student, User attribute);
+	
+	List<Student> findAllStudents();
 }
