@@ -6,6 +6,7 @@ import com.oucre.core.mode.json.AjaxJson;
 import com.oucre.core.mode.module.ModelInfo;
 import com.oucre.pojo.Resource;
 import com.oucre.pojo.Role;
+import com.oucre.pojo.SendMessage;
 import com.oucre.pojo.Student;
 import com.oucre.pojo.User;
 
@@ -37,4 +38,6 @@ public interface BusiCommonService {
 	public List<User> findAllUsers();
 
 	Student findStudentByQQ(String qq);
+	
+	SendMessage findSendMessageByGnum(String gnum);
 }

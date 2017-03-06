@@ -12,6 +12,7 @@ import com.oucre.core.dao.impl.BaseDao;
 import com.oucre.core.mode.search.EasyUiPager;
 import com.oucre.dao.SendMessageDao;
 import com.oucre.pojo.SendMessage;
+import com.oucre.pojo.Student;
 
 @Repository
 public class SendMessageDaoImpl extends BaseDao<SendMessage> implements SendMessageDao {
@@ -91,6 +92,16 @@ public class SendMessageDaoImpl extends BaseDao<SendMessage> implements SendMess
 			return m;
 		} catch (Exception e) {
 			logger.error("dao´íÎó", e);
+			return null;
+		}
+	}
+
+	@Override
+	public SendMessage findSendMessageByGnum(String gnum) {
+		List<SendMessage> sendMessageList = super.findHql("from SendMessage where gnum = "+gnum);
+		if(sendMessageList.size()>=1){
+			return sendMessageList.get(0);
+		}else{
 			return null;
 		}
 	}

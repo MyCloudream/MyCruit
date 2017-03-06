@@ -33,5 +33,5 @@ public interface Pub {
 	Integer ROLE_ID_USER_INTRODUCER = 22;
 	
 	/** …Û∫À»À **/
-	Integer ROLE_ID_USER_VERIFYER = 23;
+	Integer ROLE_ID_USER_VERIFYER = 24;
 }
