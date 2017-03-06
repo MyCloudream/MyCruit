@@ -66,7 +66,7 @@ public class SendMessage implements Serializable {
 		this.gname = gname;
 	}
 
-	@Column(name = "message")
+	@Column(name = "message", length = 65535)
 	public String getMessage() {
 		return message;
 	}

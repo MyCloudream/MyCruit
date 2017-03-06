@@ -22,7 +22,7 @@
 		<table class="vtb">
 			<tr>
 				<th><span class="t_t">*</span>姓名:</th>
-				<td><input type="text" name="name" datatype="zh2-5"
+				<td><input type="text" name="name" datatype="*1-20"
 					errormsg="请输入真实姓名，长度2-5个汉字" nullmsg="请填写信息！"><span
 					class="Validform_checktip">真实姓名，例如张三</span></td>
 			</tr>
@@ -33,9 +33,8 @@
 					class="Validform_checktip">QQ号码，例如632977922</span></td>
 			</tr>
 			<tr>
-				<th><span class="t_t">*</span>电话号码:</th>
-				<td><input type="text" name="mobile" datatype="m"
-					errormsg="请输入正确的电话号码" nullmsg="请填写信息！"><span
+				<th>电话号码:</th>
+				<td><input type="text" name="mobile"><span
 					class="Validform_checktip">电话号码，例如18601942391</span></td>
 			</tr>
 			<!-- <tr>

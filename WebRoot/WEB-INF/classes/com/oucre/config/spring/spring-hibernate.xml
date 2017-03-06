@@ -25,6 +25,7 @@
 		</property>
 		<property name="jdbcUrl">
 			<!-- <value>${jdbc.url}</value> -->
+			<!-- <value>jdbc:mysql://139.196.185.33:3306/mycruit</value> -->
 			<value>jdbc:mysql://localhost:3306/mycruit</value>
 		</property>
 		<property name="user">

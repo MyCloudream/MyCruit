@@ -27,12 +27,12 @@
 			</tr>
 			<tr>
 				<th><span class="t_t">*</span>QQ群名称:</th>
-				<td><input type="text" name="gname" datatype="s2-30" style="width:80%"><span
+				<td><input type="text" name="gname" datatype="*1-30" style="width:80%"><span
 					class="Validform_checktip">QQ群名称</span></td>
 			</tr>
 			<tr>
 				<th><span class="t_t">*</span>发送消息内容:</th>
-				<td><textarea name="message" datatype="*2-499"  cols="70" rows="15"></textarea>
+				<td><textarea name="message" cols="70" rows="15"></textarea>
 				<br/><span class="Validform_checktip">发送的内容</span></td>
 			</tr>
 		</table>
