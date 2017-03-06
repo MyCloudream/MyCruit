@@ -6,7 +6,6 @@ import java.util.Map;
 import com.oucre.core.dao.BaseDao;
 import com.oucre.core.mode.search.EasyUiPager;
 import com.oucre.pojo.Student;
-import com.oucre.pojo.User;
 
 public interface StudentDao extends BaseDao<Student>{
 	/**
@@ -22,4 +21,11 @@ public interface StudentDao extends BaseDao<Student>{
 	 * @return
 	 */
 	List<Student> findAllStudents();
+
+	/**
+	 * 根据qq号码查找学生信息
+	 * @param qq
+	 * @return
+	 */
+	Student findStudentByQQ(String qq);
 }

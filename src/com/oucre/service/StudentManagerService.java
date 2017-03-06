@@ -12,7 +12,7 @@ public interface StudentManagerService {
 	Map<String, Object> findStudentSearch(Map<String, Object> map,
 			EasyUiPager easyUiPager, User user);
 
-	AjaxJson updStudent(Student student, User user);
+	AjaxJson updStudentStatus(Student student, User user);
 
 	AjaxJson addStudent(Student student, User user);
 
@@ -21,4 +21,12 @@ public interface StudentManagerService {
 	AjaxJson updStudentConver(Student student, User attribute);
 	
 	List<Student> findAllStudents();
+
+	/**
+	 * ÐÞ¸ÄÑ§Éú
+	 * @param student
+	 * @param attribute
+	 * @return
+	 */
+	AjaxJson updStudent(Student student, User user);
 }

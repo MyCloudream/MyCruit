@@ -121,4 +121,10 @@ public class User implements java.io.Serializable {
 		this.status = status;
 	}
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", roleid=" + roleid + ", username=" + username + ", password=" + password + ", tel="
+				+ tel + ", uid=" + uid + ", status=" + status + "]";
+	}
+
 }

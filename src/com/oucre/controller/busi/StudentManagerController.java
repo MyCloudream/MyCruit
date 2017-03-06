@@ -45,15 +45,24 @@ public class StudentManagerController {
 		return studentService.findStudentSearch(map, easyUiPager,(User)req.getSession().getAttribute("user_info"));
 	}
 
+	// ×ª»¯
 	@RequestMapping(value = "/StudentManagerUpdConver.do")
 	public @ResponseBody
-	AjaxJson updStudent(@ModelAttribute Student Student,HttpSession session) {
+	AjaxJson updStudentConver(@ModelAttribute Student Student,HttpSession session) {
 		return studentService.updStudentConver(Student,(User)session.getAttribute("user_info"));
 	}
 	
+	
+	// ÉóºË
 	@RequestMapping(value = "/StudentManagerUpdStatus.do")
 	public @ResponseBody
 	AjaxJson updStudentStatus(@ModelAttribute Student Student,HttpSession session) {
+		return studentService.updStudentStatus(Student,(User)session.getAttribute("user_info"));
+	}
+
+	@RequestMapping(value = "/StudentManagerUpd.do")
+	public @ResponseBody
+	AjaxJson updStudent(@ModelAttribute Student Student,HttpSession session) {
 		return studentService.updStudent(Student,(User)session.getAttribute("user_info"));
 	}
 

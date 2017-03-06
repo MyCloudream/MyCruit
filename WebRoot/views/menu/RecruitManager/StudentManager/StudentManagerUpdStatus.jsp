@@ -34,7 +34,7 @@
 		<table class="vtb">
 			<tr>
 				<th><span class="t_t">*</span>姓名:</th>
-				<td><input type="text" name="name" datatype="*2-5"
+				<td><input type="text" name="name" datatype="*1-20"
 					errormsg="请输入真实姓名，长度2-5个汉字" nullmsg="请填写信息！"><span
 					class="Validform_checktip">真实姓名，例如张三</span></td>
 			</tr>

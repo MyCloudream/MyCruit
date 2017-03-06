@@ -177,6 +177,10 @@
 			updateobj(gb("StudentManagerUpdStatus").name,
 					gb("StudentManagerUpdStatus").link, "", "");
 		}
+		function StudentManagerUpd() {
+			updateobj(gb("StudentManagerUpd").name,
+					gb("StudentManagerUpd").link, "", "");
+		}
 		function StudentManagerAdd() {
 			addobj(gb("StudentManagerAdd").name, gb("StudentManagerAdd").link,
 					"", "");

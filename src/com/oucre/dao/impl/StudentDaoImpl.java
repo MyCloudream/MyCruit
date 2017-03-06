@@ -109,4 +109,14 @@ public class StudentDaoImpl extends BaseDao<Student> implements StudentDao {
 		}
 	}
 
+	@Override
+	public Student findStudentByQQ(String qq) {
+		List<Student> stuList = super.findHql("from Student where qq = "+qq);
+		if(stuList.size()==1){
+			return stuList.get(0);
+		}else{
+			return null;
+		}
+	}
+
 }

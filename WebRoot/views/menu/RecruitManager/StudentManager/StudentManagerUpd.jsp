@@ -17,36 +17,21 @@
 }
 </style>
 <script type="text/javascript">
-	var student;
-	function getStudentByQQ(varqq) {
-		$.ajax({
-			type : "POST",
-			async : false,
-			url : "/busi/common/findStudentByQQ.do",
-			dataType : "json",
-			data:{
-				qq:varqq
-			},
-			success : function(result) {
-				student = result;
-			}
-		});
-	}
-
 	$(function() {
-		$("#qq").blur(function() {
-			var qq = $("#qq").val();
-			getStudentByQQ(qq);
-			if(student!=null){
-				$("#qqvalue").html("QQ号码已存在");
-				$("#qqvalue").css("background-color","red");
-			}
-		});
+		valform("id", formdata[0].id, "");
+		valform("name", formdata[0].name, "");
+		valform("qq", formdata[0].qq, "");
+		valform("mobile", formdata[0].mobile, "");
+		valform("uid", formdata[0].uid, "");
+		valform("conver", formdata[0].conver, "");
+		valform("days", formdata[0].days, "");
+		valform("status", formdata[0].status, "");
 	});
 </script>
 </head>
 <body>
-	<form class="formobj" method="post" action="/busi/StudentManagerAdd.do">
+	<form class="formobj" method="post" action="/busi/StudentManagerUpd.do">
+		<span>注意：只能修改自己录入的数据，并且数据需要是录入状态（也即审核之后不再能修改）</span>
 		<table class="vtb">
 			<tr>
 				<th><span class="t_t">*</span>姓名:</th>
@@ -56,27 +41,15 @@
 			</tr>
 			<tr>
 				<th><span class="t_t">*</span>QQ号码:</th>
-				<td><input id="qq" type="text" name="qq" datatype="n8-12"
-					errormsg="请输入正确的QQ号码" nullmsg="请填写信息！"><span id="qqvalue"
+				<td><input type="text" name="qq" datatype="n8-12"
+					errormsg="请输入正确的QQ号码" nullmsg="请填写信息！"><span
 					class="Validform_checktip">QQ号码，例如632977922</span></td>
 			</tr>
 			<tr>
-				<th>电话号码:</th>
+				<th><span class="t_t">*</span>电话号码:</th>
 				<td><input type="text" name="mobile"><span
 					class="Validform_checktip">电话号码，例如18601942391</span></td>
 			</tr>
-			<!-- <tr>
-				<th><span class="t_t">*</span>学生状态:</th>
-				<td><select name="status">
-						<option value="1">考虑中</option>
-						<option value="2">已入学</option>
-						<option value="3">已放弃</option>
-				</select> <span class="Validform_checktip">选择当前的学生状态（考虑中，已入学，已放弃，默认考虑中）</span></td>
-			</tr> -->
-			<!-- 			<tr>
-				<th><span class="t_t">*</span>学生状态:</th>
-				<td>考虑中</td>
-			</tr> -->
 			<tr>
 				<th><span class="t_t">*</span>转化设置:</th>
 				<td><select name="conver">
@@ -85,7 +58,13 @@
 				</select> <span class="Validform_checktip">选择"我可以转化",则有30天的转化时间。</span></td>
 			</tr>
 		</table>
-		<span class="thidden"><input type="button" id="btn_sub"></span>
+		<span class="thidden">
+			<input type="hidden" name="id" type="text">
+			<input type="hidden" name="uid" type="text">
+			<input type="hidden" name="status" type="text">
+			<input type="hidden" name="days" type="text">
+			<input type="button" id="btn_sub">
+		</span>
 	</form>
 </body>
 </html>
